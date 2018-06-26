@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# script/server: produce jekyll site of the manual
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+# use local gitbook
+gitbook="./node_modules/.bin/gitbook"
+
+# create new manual
+echo "==> Building book..."
+${gitbook} build >/dev/null 2>&1
+
+echo "==> Generating PDF GH4D..."
+${gitbook} pdf . manual.pdf >/dev/null 2>&1
