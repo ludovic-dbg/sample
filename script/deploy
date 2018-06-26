@@ -23,7 +23,7 @@ git clean -fx node_modules
 git clean -fx vendor
 git clean -fx .ruby-version
 
-mv _book/* .
+# mv _book/* .
 
 git add .
 git commit -m "update book [ci skip]"
